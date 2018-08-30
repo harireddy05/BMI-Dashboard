@@ -1,5 +1,5 @@
 # Health-Dashboard
-A micro project intended as a website to check the BMI and display a few other results based off of values entered for height and weight through the interface. The page uses HTML, CSS, Bootstrap and JavaScript.
+A micro project intended as a website to check the BMI and display a few other results based off of values entered for height and weight through the interface. It is also an instant unit based converter for height and weight values (you get other values as you'd type in on any one of the fields). The page uses HTML, CSS, Bootstrap and JavaScript.
 
 This webpage includes 2 files -
 1. index.html
