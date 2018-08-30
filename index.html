@@ -15,41 +15,68 @@
     <button type="button" class="btn btn-secondary" style="width: 48%; padding: 10px; margin-left: 10px;" onclick="BMIFunction()">Calculate</button>
   </div>
   <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-4">
-      <h4>Weight</h4>
-      <form>
-        <div class="form-group">
-          <input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Pounds...">
-          <input id="kgInput" type="number" class="form-control form-control-lg" placeholder="Kilograms...">
-          <input id="gmInput" type="number" class="form-control form-control-lg" placeholder="Grams...">
-          <input id="ozInput" type="number" class="form-control form-control-lg" placeholder="Ounces...">
-        </div>
-      </form>
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
+        <h4>Weight</h4>
+        <form>
+          <div class="form-group">
+            <table style="width:100%">
+              <tr>
+                <td><input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Pounds..."></td>
+                <td>lbs</td>
+              </tr>
+              <tr>
+                <td><input id="kgInput" type="number" class="form-control form-control-lg" placeholder="Kilograms..."></td>
+                <td>kg</td>
+              </tr>
+              <tr>
+                <td><input id="gmInput" type="number" class="form-control form-control-lg" placeholder="Grams..."></td>
+                <td>gm</td>
+              </tr>
+              <tr>
+                <td><input id="ozInput" type="number" class="form-control form-control-lg" placeholder="Ounces..."></td>
+                <td>oz</td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <h4>Height</h4>
+        <form>
+          <div class="form-group">
+            <table style="width:100%">
+              <tr>
+                <td><input id="cmInput" type="number" class="form-control form-control-lg" placeholder="Centimeters..."></td>
+                <td>cm</td>
+              </tr>
+              <tr>
+                <td><input id="inchInput" type="number" class="form-control form-control-lg" placeholder="Inches..."></td>
+                <td>in</td>
+              </tr>
+              <tr>
+                <td><input id="mInput" type="number" class="form-control form-control-lg" placeholder="Meters..."></td>
+                <td>m</td>
+              </tr>
+              <tr>
+                <td><input id="ftInput" type="number" class="form-control form-control-lg" placeholder="Feet..."></td>
+                <td>ft</td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
 
-    </div>
-    <div class="col-sm-4">
-      <h4>Height</h4>
-      <form>
-        <div class="form-group">
-          <input id="cmInput" type="number" class="form-control form-control-lg" placeholder="Centimeters...">
-          <input id="inchInput" type="number" class="form-control form-control-lg" placeholder="Inches...">
-          <input id="mInput" type="number" class="form-control form-control-lg" placeholder="Meters...">
-          <input id="ftInput" type="number" class="form-control form-control-lg" placeholder="Feet...">
-        </div>
-      </form>
-    </div>
-    <div class="col-sm-4">
-
-      <h4>Health Index</h4>
-      <form>
-        <div class="form-group">
-          <div class="indexcol" id="bmi" style="padding-left: 20px; padding-top: 10px;"><p>Body Mass Index...</p></div>
-          <div class="indexcol"><p style="padding-left: 20px; padding-top: 10px;">Calorie In...</p></div>
-          <div class="indexcol"><p style="padding-left: 20px; padding-top: 10px;">Calorie Out...</p></div>
-          <div class="indexcol" id="comment"><p style="padding-left: 20px; padding-top: 10px;">Comment...</p></div>
-        </div>
-      </form>
+        <h4>Health Index</h4>
+        <form>
+          <div class="form-group">
+            <div class="indexcol" id="bmi" style="padding-left: 20px; padding-top: 10px;"><p>Body Mass Index...</p></div>
+            <div class="indexcol" id="calIn" style="padding-left: 20px; padding-top: 10px;"><p>Calorie In...</p></div>
+            <div class="indexcol" id="calOut" style="padding-left: 20px; padding-top: 10px;"><p>Calorie Out...</p></div>
+            <div class="indexcol" id="comment" style="padding-left: 20px; padding-top: 10px;"><p>Comment...</p></div>
+          </div>
+        </form>
       </div>
 
     </div>
@@ -57,72 +84,75 @@
 </div>
 
 <script type="text/javascript">
-  document.getElementById('lbsInput').addEventListener('input',function(e){
-    //console.log(007);
-    let lbs = e.target.value;
-    document.getElementById('gmInput').placeholder = (lbs/0.0022046).toFixed(4) + " gm";
-    document.getElementById('kgInput').placeholder = (lbs*0.453592).toFixed(4) + " kg";
-    document.getElementById('ozInput').placeholder = (lbs*16).toFixed(4) + " oz";
-    //document.getElementById('lbsInput').innerHTML = lbs;
-  });
+document.getElementById('lbsInput').addEventListener('input',function(e){
+  //console.log(007);
+  let lbs = e.target.value;
+  document.getElementById('gmInput').value = (lbs/0.0022046).toFixed(4);
+  document.getElementById('kgInput').value = (lbs*0.453592).toFixed(4);
+  document.getElementById('ozInput').value = (lbs*16).toFixed(4);
+  //document.getElementById('lbsInput').innerHTML = lbs;
+});
 
-  document.getElementById('kgInput').addEventListener('input',function(e){
-    let kg = e.target.value;
-    //document.getElementById('ozInput').value = kg*35.274;
-    document.getElementById('ozInput').placeholder = (kg*35.274).toFixed(4) + " oz";
-    document.getElementById('gmInput').placeholder = (kg*1000).toFixed(4) + " gm";
-    document.getElementById('lbsInput').placeholder = (kg*2.20462).toFixed(4) + " lbs";
-  });
+document.getElementById('kgInput').addEventListener('input',function(e){
+  let kg = e.target.value;
+  //document.getElementById('ozInput').value = kg*35.274;
+  document.getElementById('ozInput').value = (kg*35.274).toFixed(4);
+  document.getElementById('gmInput').value = (kg*1000).toFixed(4);
+  document.getElementById('lbsInput').value = (kg*2.20462).toFixed(4);
+});
 
-  document.getElementById('gmInput').addEventListener('input',function(e){
-    let gm = e.target.value;
-    document.getElementById('ozInput').placeholder = (gm*0.035274).toFixed(4) + " oz";
-    document.getElementById('kgInput').placeholder = (gm*0.001).toFixed(4) + " kg";
-    document.getElementById('lbsInput').placeholder = (gm*0.00220462).toFixed(4) + " lbs";
-  });
+document.getElementById('gmInput').addEventListener('input',function(e){
+  let gm = e.target.value;
+  document.getElementById('ozInput').value = (gm*0.035274).toFixed(4);
+  document.getElementById('kgInput').value = (gm*0.001).toFixed(4);
+  document.getElementById('lbsInput').value = (gm*0.00220462).toFixed(4);
+});
 
-  document.getElementById('ozInput').addEventListener('input',function(e){
-    let oz = e.target.value;
-    document.getElementById('gmInput').placeholder = (oz*28.3495).toFixed(4) + " oz";
-    document.getElementById('kgInput').placeholder = (oz*0.0283495).toFixed(4) + " kg";
-    document.getElementById('lbsInput').placeholder = (oz*0.0625).toFixed(4) + " lbs";
-  });
+document.getElementById('ozInput').addEventListener('input',function(e){
+  let oz = e.target.value;
+  document.getElementById('gmInput').value = (oz*28.3495).toFixed(4);
+  document.getElementById('kgInput').value = (oz*0.0283495).toFixed(4);
+  document.getElementById('lbsInput').value = (oz*0.0625).toFixed(4);
+});
 
-  document.getElementById('cmInput').addEventListener('input',function(e){
-    let cm = e.target.value;
-    document.getElementById('mInput').placeholder = (cm*0.01).toFixed(4) + " m";
-    document.getElementById('inchInput').placeholder = (cm*0.393701).toFixed(4) + " in";
-    document.getElementById('ftInput').placeholder = (cm*0.032808399).toFixed(4) + " ft";
-  });
+document.getElementById('cmInput').addEventListener('input',function(e){
+  let cm = e.target.value;
+  document.getElementById('mInput').value = (cm*0.01).toFixed(4);
+  document.getElementById('inchInput').value = (cm*0.393701).toFixed(4);
+  document.getElementById('ftInput').value = (cm*0.032808399).toFixed(4);
+});
 
-  document.getElementById('mInput').addEventListener('input',function(e){
-    let m = e.target.value;
-    document.getElementById('cmInput').placeholder = (m*100).toFixed(4) + " cm";
-    document.getElementById('inchInput').placeholder = (m*39.3701).toFixed(4) + " in";
-    document.getElementById('ftInput').placeholder = (m*3.280841666667).toFixed(4) + " ft";
-  });
+document.getElementById('mInput').addEventListener('input',function(e){
+  let m = e.target.value;
+  document.getElementById('cmInput').value = (m*100).toFixed(4);
+  document.getElementById('inchInput').value = (m*39.3701).toFixed(4);
+  document.getElementById('ftInput').value = (m*3.280841666667).toFixed(4);
+});
 
-  document.getElementById('inchInput').addEventListener('input',function(e){
-    let inch = e.target.value;
-    document.getElementById('mInput').placeholder = (inch*0.02539998984).toFixed(4) + " m";
-    document.getElementById('cmInput').placeholder = (inch*2.5399989839999999042).toFixed(4) + " cm";
-    document.getElementById('ftInput').placeholder = (inch*0.0833333).toFixed(4) + " ft";
-  });
+document.getElementById('inchInput').addEventListener('input',function(e){
+  let inch = e.target.value;
+  document.getElementById('mInput').value = (inch*0.02539998984).toFixed(4);
+  document.getElementById('cmInput').value = (inch*2.5399989839999999042).toFixed(4);
+  document.getElementById('ftInput').value = (inch*0.0833333).toFixed(4);
+});
 
-  document.getElementById('ftInput').addEventListener('input',function(e){
-    let ft = e.target.value;
-    document.getElementById('mInput').placeholder = (ft*0.3048000097536).toFixed(4) + " m";
-    document.getElementById('inchInput').placeholder = (ft*0.393701).toFixed(4) + " in";
-    document.getElementById('cmInput').placeholder = (ft*0.032808399).toFixed(4) + " cm";
-  });
+document.getElementById('ftInput').addEventListener('input',function(e){
+  let ft = e.target.value;
+  document.getElementById('mInput').value = (ft*0.3048000097536).toFixed(4);
+  document.getElementById('inchInput').value = (ft*0.393701).toFixed(4);
+  document.getElementById('cmInput').value = (ft*0.032808399).toFixed(4);
+  //document.getElementById('cmInput').placeholder = (ft*0.032808399).toFixed(4);
+});
 
-  function BMIFunction(){
-    var meters = document.getElementById('mInput').value;
-    var kilograms = document.getElementById('kgInput').value;
-    document.getElementById('bmi').innerHTML = "Your Body Mass Index is " + (kilograms/(meters*meters)).toFixed(4).bold();
-  }
+function BMIFunction(){
+  var meters = document.getElementById('mInput').value;
+  var kilograms = document.getElementById('kgInput').value;
+  document.getElementById('bmi').innerHTML = "Your Body Mass Index is " + (kilograms/(meters*meters)).toFixed(2).bold();
+  document.getElementById('calIn').innerHTML = "Your Minimum Calorie Intake should be " + ((kilograms/(meters*meters))*(150)).toFixed(2).bold();
+  document.getElementById('calOut').innerHTML = "Your Minimum Calorie Burn should be " + ((kilograms/(meters*meters))*(120)).toFixed(2).bold();
+  document.getElementById('comment').innerHTML = "Your routine needs work out!";
+}
 
 </script>
-
 </body>
 </html>
