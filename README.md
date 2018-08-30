@@ -5,10 +5,12 @@ This webpage includes 2 files -
 1. index.html
 2. style.css
 
+The page also uses Bootstrap, which implies that you might need an internet connection (or download the source) and this URL to be active - https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css
+
 Instructions to run -
 1. Place in a folder 
 2. Copy the folder path
-3. Paste the path in the address bar of a browser to run
+3. Paste the path in the address bar of a browser and run
 
 Warning: This project was intended for educational purposes (for myself) and is in no way accurate with respect to the formulas or constants used.
 
