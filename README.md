@@ -16,4 +16,4 @@ Warning: This project was intended for educational purposes (for myself) and is 
 
 Hosted at - https://height-weight-converter.herokuapp.com/index.html
 
-For all kinds of feedback, criticism, comments or any other advice, please write to harireddy05@gmail.com or harkrishna.reddy@mavs.uta.edu or krishna.academia@gmail.com
+For all kinds of feedback, criticism, comments or any other advice, please write to krishna.academia@gmail.com
