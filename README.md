@@ -1,4 +1,4 @@
-# Health-Dashboard
+# BMI-Dashboard
 A micro project intended as a website to check the BMI and display a few other results based off of values entered for height and weight through the interface. It is also an instant unit based converter for height and weight values (you get other values as you'd type in on any one of the fields). The page uses HTML, CSS, Bootstrap and JavaScript.
 
 This webpage includes 2 files -
@@ -13,7 +13,5 @@ Instructions to run -
 3. Paste the path in the address bar of a browser and run
 
 Warning: This project was intended for educational purposes (for myself) and is in no way accurate with respect to the formulas or constants used.
-
-Hosted at - https://height-weight-converter.herokuapp.com/index.html
 
 For all kinds of feedback, criticism, comments or any other advice, please write to krishna.academia@gmail.com
