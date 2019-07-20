@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <script src="functionality.js"></script>
   <title>Health Dashboard</title>
 </head>
+
 <body>
   <div class="display-4 text-center">Health Dashboard</div>
   <div class="container" style="margin-top: 40px;">
     <div class="row">
       <div class="col-md-6" style="padding-bottom: 5px;">
-        <button type="button" class="btn btn-secondary" style="width: 100%; padding: 10px; " onclick="location.reload(true);">Clear</button>
+        <button type="button" class="btn btn-secondary" style="width: 100%; padding: 10px; "
+          onclick="location.reload(true);">Clear</button>
       </div>
       <div class="col-md-6">
-        <button type="button" class="btn btn-secondary" style="width: 100%; padding: 10px;" onclick="BMIFunction()">Calculate</button>
+        <button type="button" class="btn btn-secondary" style="width: 100%; padding: 10px;"
+          onclick="BMIFunction()">Calculate</button>
 
       </div>
     </div>
@@ -29,19 +35,25 @@
           <div class="form-group">
             <table style="width:100%">
               <tr>
-                <td><input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Pounds..."></td>
+                <td><input id="lbsInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Pounds...">
+                </td>
                 <td>lbs</td>
               </tr>
               <tr>
-                <td><input id="kgInput" type="number" class="form-control form-control-lg" placeholder="Kilograms..."></td>
+                <td><input id="kgInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Kilograms...">
+                </td>
                 <td>kg</td>
               </tr>
               <tr>
-                <td><input id="gmInput" type="number" class="form-control form-control-lg" placeholder="Grams..."></td>
+                <td><input id="gmInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Grams..."></td>
                 <td>gm</td>
               </tr>
               <tr>
-                <td><input id="ozInput" type="number" class="form-control form-control-lg" placeholder="Ounces..."></td>
+                <td><input id="ozInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Ounces..."></td>
                 <td>oz</td>
               </tr>
             </table>
@@ -54,19 +66,23 @@
           <div class="form-group">
             <table style="width:100%">
               <tr>
-                <td><input id="cmInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Centimeters..."></td>
+                <td><input id="cmInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Centimeters..."></td>
                 <td>cm</td>
               </tr>
               <tr>
-                <td><input id="inchInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Inches..."></td>
+                <td><input id="inchInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Inches..."></td>
                 <td>in</td>
               </tr>
               <tr>
-                <td><input id="mInput" type="number" class="form-control form-control-lg" placeholder="Meters..."></td>
+                <td><input id="mInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Meters..."></td>
                 <td>m</td>
               </tr>
               <tr>
-                <td><input id="ftInput" type="number" class="form-control form-control-lg" placeholder="Feet..."></td>
+                <td><input id="ftInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Feet..."></td>
                 <td>ft</td>
               </tr>
             </table>
@@ -78,88 +94,25 @@
         <h4>Health Index</h4>
         <form>
           <div class="form-group">
-            <div class="indexcol" id="bmi" style="padding-left: 20px; padding-top: 10px;"><p>Body Mass Index...</p></div>
-            <div class="indexcol" id="calIn" style="padding-left: 20px; padding-top: 10px;"><p>Calorie In...</p></div>
-            <div class="indexcol" id="calOut" style="padding-left: 20px; padding-top: 10px;"><p>Calorie Out...</p></div>
-            <div class="indexcol" id="comment" style="padding-left: 20px; padding-top: 10px;"><p>Comment...</p></div>
+            <div class="indexcol" id="bmi" style="padding-left: 20px; padding-top: 10px;">
+              <p>Body Mass Index...</p>
+            </div>
+            <div class="indexcol" id="calIn" style="padding-left: 20px; padding-top: 10px;">
+              <p>Calorie In...</p>
+            </div>
+            <div class="indexcol" id="calOut" style="padding-left: 20px; padding-top: 10px;">
+              <p>Calorie Out...</p>
+            </div>
+            <div class="indexcol" id="comment" style="padding-left: 20px; padding-top: 10px;">
+              <p>Comment...</p>
+            </div>
           </div>
         </form>
       </div>
 
     </div>
   </div>
-</div>
 
-<script type="text/javascript">
-document.getElementById('lbsInput').addEventListener('input',function(e){
-  //console.log(007);
-  let lbs = e.target.value;
-  document.getElementById('gmInput').value = (lbs/0.0022046).toFixed(4);
-  document.getElementById('kgInput').value = (lbs*0.453592).toFixed(4);
-  document.getElementById('ozInput').value = (lbs*16).toFixed(4);
-  //document.getElementById('lbsInput').innerHTML = lbs;
-});
-
-document.getElementById('kgInput').addEventListener('input',function(e){
-  let kg = e.target.value;
-  //document.getElementById('ozInput').value = kg*35.274;
-  document.getElementById('ozInput').value = (kg*35.274).toFixed(4);
-  document.getElementById('gmInput').value = (kg*1000).toFixed(4);
-  document.getElementById('lbsInput').value = (kg*2.20462).toFixed(4);
-});
-
-document.getElementById('gmInput').addEventListener('input',function(e){
-  let gm = e.target.value;
-  document.getElementById('ozInput').value = (gm*0.035274).toFixed(4);
-  document.getElementById('kgInput').value = (gm*0.001).toFixed(4);
-  document.getElementById('lbsInput').value = (gm*0.00220462).toFixed(4);
-});
-
-document.getElementById('ozInput').addEventListener('input',function(e){
-  let oz = e.target.value;
-  document.getElementById('gmInput').value = (oz*28.3495).toFixed(4);
-  document.getElementById('kgInput').value = (oz*0.0283495).toFixed(4);
-  document.getElementById('lbsInput').value = (oz*0.0625).toFixed(4);
-});
-
-document.getElementById('cmInput').addEventListener('input',function(e){
-  let cm = e.target.value;
-  document.getElementById('mInput').value = (cm*0.01).toFixed(4);
-  document.getElementById('inchInput').value = (cm*0.393701).toFixed(4);
-  document.getElementById('ftInput').value = (cm*0.032808399).toFixed(4);
-});
-
-document.getElementById('mInput').addEventListener('input',function(e){
-  let m = e.target.value;
-  document.getElementById('cmInput').value = (m*100).toFixed(4);
-  document.getElementById('inchInput').value = (m*39.3701).toFixed(4);
-  document.getElementById('ftInput').value = (m*3.280841666667).toFixed(4);
-});
-
-document.getElementById('inchInput').addEventListener('input',function(e){
-  let inch = e.target.value;
-  document.getElementById('mInput').value = (inch*0.02539998984).toFixed(4);
-  document.getElementById('cmInput').value = (inch*2.5399989839999999042).toFixed(4);
-  document.getElementById('ftInput').value = (inch*0.0833333).toFixed(4);
-});
-
-document.getElementById('ftInput').addEventListener('input',function(e){
-  let ft = e.target.value;
-  document.getElementById('mInput').value = (ft*0.3048000097536).toFixed(4);
-  document.getElementById('inchInput').value = (ft*0.393701).toFixed(4);
-  document.getElementById('cmInput').value = (ft*0.032808399).toFixed(4);
-  //document.getElementById('cmInput').placeholder = (ft*0.032808399).toFixed(4);
-});
-
-function BMIFunction(){
-  var meters = document.getElementById('mInput').value;
-  var kilograms = document.getElementById('kgInput').value;
-  document.getElementById('bmi').innerHTML = "Your Body Mass Index is " + (kilograms/(meters*meters)).toFixed(2).bold();
-  document.getElementById('calIn').innerHTML = "Your Minimum Calorie Intake should be " + ((kilograms/(meters*meters))*(150)).toFixed(2).bold();
-  document.getElementById('calOut').innerHTML = "Your Minimum Calorie Burn should be " + ((kilograms/(meters*meters))*(120)).toFixed(2).bold();
-  document.getElementById('comment').innerHTML = "Your routine needs work out!";
-}
-
-</script>
 </body>
+
 </html>
