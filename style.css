@@ -80,3 +80,12 @@ body{
   border-radius: 5px;
   font-size: 14px;
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #666;
+  color: white;
+  text-align: center;
+}
