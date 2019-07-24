@@ -14,4 +14,4 @@ Instructions to run -
 
 Warning: This project was intended for educational purposes (for myself) and is in no way accurate with respect to the formulas or constants used.
 
-For all kinds of feedback, criticism, comments or any other advice, please write to krishna.academia@gmail.com
+For all kinds of feedback, criticism, comments or any other advice, please write to harireddy05@gmail.com
